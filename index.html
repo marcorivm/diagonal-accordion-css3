@@ -1,0 +1,63 @@
+<html>
+<head>
+	<title>Test diagonal</title>
+    <style>
+        .skew-cont > img {
+            -webkit-transform: skewX(-45deg);
+            position:absolute;
+        }
+        .skew-cont {
+            width:400px;
+            height:300px;
+            -webkit-transition: width 1s ease-in;
+            overflow: hidden;
+            display:inline-block;
+            margin:0 -310px 0 0;
+            padding-left:150px;
+            position:relative;
+        }
+        .skew-open {
+            width:800px;
+            -webkit-transition: width 1s ease-in;
+        }
+        body > div:first-child {
+            margin-left: 50px;
+            width:100%;
+            overflow-x:visible;
+            white-space:nowrap;
+        }
+    </style>
+    
+</head>
+<body>
+    <div id="skew-slider">
+        <div class="skew-cont skew-open">
+            <img src="1.png" >
+        </div>
+        <div class="skew-cont">
+            <img src="2.png"/>
+        </div>
+        <div class="skew-cont">
+            <img src="3.png"/>
+        </div>
+        <div class="skew-cont">
+            <img src="4.png"/>
+        </div>
+        <div class="skew-cont">
+            <img src="5.png"/>
+        </div>
+    </div>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script>
+        jQuery('#skew-slider').on('click', '.skew-cont', function() {
+            var obj = $(this);
+            if(!obj.hasClass('skew-open')) {
+                $('.skew-open').removeClass('skew-open');
+                obj.addClass('skew-open');
+            } else {
+                $('.skew-open').removeClass('skew-open');
+            }
+        });
+    </script>
+</body>
+</html>

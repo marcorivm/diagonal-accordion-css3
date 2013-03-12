@@ -3,48 +3,106 @@
 	<title>Test diagonal</title>
     <style>
         .skew-cont > img {
-            -webkit-transform: skewX(-45deg);
             position:absolute;
+            display: none;
+            left: 0;
+            top: 0;
+            z-index: -1;
         }
         .skew-cont {
-            width:400px;
+            width:0px;
+            padding-left: 140px;
+            background: url('http://lorempixel.com/g/1000/300/city') no-repeat left top;
             height:300px;
             -webkit-transition: width 1s ease-in;
             overflow: hidden;
-            display:inline-block;
-            margin:0 -310px 0 0;
-            padding-left:150px;
+            display: block;
+            float: left;
+            margin:0 0 0 0;
             position:relative;
+            -webkit-transform:skewX(-45deg);
         }
+        .skew-cont .accordion-title {
+            -webkit-transform: rotate(-90deg);
+            position: absolute;
+            left: 10px;
+            top: 10px;
+        }
+        .skew-cont:after {
+            content: "";
+            background: #FFF;
+            width: 10px;
+            height: 300px;
+            display: block;
+            position: absolute;
+            left: auto;
+            right: 0px;
+            top: 0;
+        }
+        .skew-cont > div {
+            position: relative;
+            padding: 30px;
+            left:40px;
+            -webkit-transform:skewX(45deg);
+        }
+        .skew-cont > div > img {
+            width: 200px;
+            float: left;
+        }
+        /*
+        .skew-cont > div {
+            display: none;
+        }
+        .skew-cont.skew-open > div {
+            display: block;
+        }
+        */
         .skew-open {
             width:800px;
             -webkit-transition: width 1s ease-in;
         }
         body > div:first-child {
             margin-left: 50px;
-            width:100%;
+            width:5000px;
             overflow-x:visible;
             white-space:nowrap;
         }
     </style>
-    
+
 </head>
 <body>
     <div id="skew-slider">
         <div class="skew-cont skew-open">
-            <img src="1.png" >
+            <h1 class="accordion-title">Slide 1</h1>
+            <div>
+                <img src="http://lorempixel.com/1000/300/food/" >
+                <h1>Hello</h1>
+                <p>Sample content</p>
+            </div>
         </div>
         <div class="skew-cont">
-            <img src="2.png"/>
+            <h1 class="accordion-title">Slide 2</h1>
+            <div>
+                <img src="http://lorempixel.com/1000/300/food/" >
+                <h1>Hello</h1>
+                <p>Sample content</p>
+            </div>
         </div>
         <div class="skew-cont">
-            <img src="3.png"/>
+            <h1 class="accordion-title">Slide 3</h1>
+            <div>
+                <img src="http://lorempixel.com/1000/300/food/" >
+                <h1>Hello</h1>
+                <p>Sample content</p>
+            </div>
         </div>
         <div class="skew-cont">
-            <img src="4.png"/>
-        </div>
-        <div class="skew-cont">
-            <img src="5.png"/>
+            <h1 class="accordion-title">Slide 4</h1>
+            <div>
+                <img src="http://lorempixel.com/1000/300/food/" >
+                <h1>Hello</h1>
+                <p>Sample content</p>
+            </div>
         </div>
     </div>
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>

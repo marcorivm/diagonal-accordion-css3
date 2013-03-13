@@ -1,6 +1,6 @@
 # Diagonal CSS3 Accordion
 ## Description
-This is a proof of concept for a diagonal accordion usin mostly CSS3 and some JavaScript for triggering events.
+This is a proof of concept for a diagonal accordion using mostly CSS3 and some JavaScript for triggering events.
 
 ## Features
  - Diagonal accordion with a -45deg skew.
@@ -51,7 +51,7 @@ This accordions needs some basic markup:
 	    </div>
 	</div>
 ```
-Include the scripts.js file and styles.css files, tweak to your liking and you should be ready to go.
+Include the scripts.js and styles.css files, tweak to your liking and you should be ready to go.
 
 ## About
 This was developed as a proof of concept for a project, feel free to use it however you want.

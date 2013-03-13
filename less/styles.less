@@ -1,6 +1,12 @@
-@slide-width: 800px;
-@skew-degs:-45deg;
-@slide-height:300px;
+@slide-width_: 700;
+@skew-degs_:-45;
+@slide-height_:800;
+@slide-extra: ~`Math.ceil(Math.abs(@{slide-height_} / Math.tan(@{skew-degs_}))) * 1.2`;
+
+@slide-width: @slide-width_ + 0px;
+@skew-degs: @skew-degs_ + 0deg;
+@slide-height: @slide-height_ + 0px;
+
 .transform-skew (@degs: @skew-degs) {
     -moz-transform:skewX(@degs);
     -webkit-transform:skewX(@degs);
@@ -44,7 +50,6 @@
     position: absolute;
     right: 5px;
     top: 10px;
-
     .transform-rotate(-90deg);
 }
 .skew-cont:after {
@@ -60,14 +65,16 @@
 }
 .skew-cont > div {
     position: relative;
-    margin-left: 180px;
+    margin-left: @slide-extra;
     padding: 30px;
-    height: 240px;
+    height: (@slide-height - 60);
     .opacity(0);
     .transition(opacity, 1s, ease-in);
 }
 .skew-open {
-    width:@slide-width;
+    width:(@slide-width / 2);
+    @media only screen and (min-width : 1024px) { width: @slide-width; }
+    @media only screen and (min-width : 1600px) { width: (@slide-width * 1.5); }
     .transition(width, 1s, ease-in);
 }
 .skew-open > div {
@@ -82,7 +89,9 @@
 .skew-background {
     position: absolute;
     top: 0;
-    left: -150px;
+    left: -(@slide-height * 0.5);
+    height: @slide-height;
+    width: (@slide-width + @slide-extra + @slide-extra);
 }
 .extra-content {
     position: absolute;

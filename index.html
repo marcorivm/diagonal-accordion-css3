@@ -1,86 +1,33 @@
 <html>
 <head>
 	<title>Test diagonal</title>
-    <style>
-        .skew-cont > img {
-            position:absolute;
-            display: none;
-            left: 0;
-            top: 0;
-            z-index: -1;
-        }
-        .skew-cont {
-            width:0px;
-            padding-left: 140px;
-            background: url('http://lorempixel.com/g/1000/300/city') no-repeat left top;
-            height:300px;
-            -webkit-transition: width 1s ease-in;
-            overflow: hidden;
-            display: block;
-            float: left;
-            margin:0 0 0 0;
-            position:relative;
-            -webkit-transform:skewX(-45deg);
-        }
-        .skew-cont .accordion-title {
-            -webkit-transform: rotate(-90deg);
-            position: absolute;
-            left: 10px;
-            top: 10px;
-        }
-        .skew-cont:after {
-            content: "";
-            background: #FFF;
-            width: 10px;
-            height: 300px;
-            display: block;
-            position: absolute;
-            left: auto;
-            right: 0px;
-            top: 0;
-        }
-        .skew-cont > div {
-            position: relative;
-            padding: 30px;
-            left:40px;
-            -webkit-transform:skewX(45deg);
-        }
-        .skew-cont > div > img {
-            width: 200px;
-            float: left;
-        }
-        /*
-        .skew-cont > div {
-            display: none;
-        }
-        .skew-cont.skew-open > div {
-            display: block;
-        }
-        */
-        .skew-open {
-            width:800px;
-            -webkit-transition: width 1s ease-in;
-        }
-        body > div:first-child {
-            margin-left: 50px;
-            width:5000px;
-            overflow-x:visible;
-            white-space:nowrap;
-        }
-    </style>
-
+    <link rel="stylesheet" type="text/css" href="less/styles.css">
+    <link rel="stylesheet" type="text/css" href="less/looks.css">
 </head>
 <body>
-    <div id="skew-slider">
+
+    <div id="my-accordion" class="skew-accordion">
         <div class="skew-cont skew-open">
+            <img src="http://lorempixel.com/1280/300/sports?1=1" alt="" class="skew-background">
             <h1 class="accordion-title">Slide 1</h1>
             <div>
                 <img src="http://lorempixel.com/1000/300/food/" >
                 <h1>Hello</h1>
                 <p>Sample content</p>
             </div>
+            <div class="extra-content fixie">
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <img src="http://lorempixel.com/400/300/abstract" alt="">
+                <hr>
+                <p></p>
+                <p></p>
+            </div>
         </div>
         <div class="skew-cont">
+            <img src="http://lorempixel.com/1280/300/sports?1=2" alt="" class="skew-background">
             <h1 class="accordion-title">Slide 2</h1>
             <div>
                 <img src="http://lorempixel.com/1000/300/food/" >
@@ -89,6 +36,7 @@
             </div>
         </div>
         <div class="skew-cont">
+            <img src="http://lorempixel.com/1280/300/sports?1=3" alt="" class="skew-background">
             <h1 class="accordion-title">Slide 3</h1>
             <div>
                 <img src="http://lorempixel.com/1000/300/food/" >
@@ -97,6 +45,7 @@
             </div>
         </div>
         <div class="skew-cont">
+            <img src="http://lorempixel.com/1280/300/sports?1=4" alt="" class="skew-background">
             <h1 class="accordion-title">Slide 4</h1>
             <div>
                 <img src="http://lorempixel.com/1000/300/food/" >
@@ -105,17 +54,10 @@
             </div>
         </div>
     </div>
+
+    <!-- Scripts -->
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script>
-        jQuery('#skew-slider').on('click', '.skew-cont', function() {
-            var obj = $(this);
-            if(!obj.hasClass('skew-open')) {
-                $('.skew-open').removeClass('skew-open');
-                obj.addClass('skew-open');
-            } else {
-                $('.skew-open').removeClass('skew-open');
-            }
-        });
-    </script>
+    <script src="https://rawgithub.com/ryhan/fixie/master/fixie_min.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>

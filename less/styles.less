@@ -1,0 +1,92 @@
+@slide-width: 800px;
+@skew-degs:-45deg;
+@slide-height:300px;
+.transform-skew (@degs: @skew-degs) {
+    -moz-transform:skewX(@degs);
+    -webkit-transform:skewX(@degs);
+    -ms-transform:skewX(@degs);
+    transform:skewX(@degs);
+}
+.transform-rotate (@degs: @skew-degs) {
+    -moz-transform:rotate(@degs);
+    -webkit-transform:rotate(@degs);
+    -ms-transform:rotate(@degs);
+    transform:rotate(@degs);
+}
+.transition (@property: all, @time: 1s, @bezier: linear) {
+    -moz-transition: @arguments;
+    -webkit-transition: @arguments;
+    transition: @arguments;
+}
+.opacity (@opacity: 1) {
+    opacity: @opacity;
+    -ms-filter: ~"'progid:DXImageTransform.Microsoft.Alpha(Opacity=" @opacity*100 ~")'";
+    filter: ~"alpha(opacity=" @opacity*100 ~")";
+}
+.skew-cont {
+    width:0px;
+    padding:0 128px 0 0px;
+    overflow-x: hidden;
+    overflow-y: visible;
+    display: block;
+    float: left;
+    margin:0 0 0 0;
+    position:relative;
+    .transform-skew;
+    .transition(width, 1s, ease-in)
+
+}
+.skew-cont > div,
+.skew-background {
+    .transform-skew(-@skew-degs);
+}
+.skew-cont .accordion-title {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+
+    .transform-rotate(-90deg);
+}
+.skew-cont:after {
+    content: "";
+    background: #FFF;
+    width: 10px;
+    height: @slide-height;
+    display: block;
+    position: absolute;
+    left: auto;
+    right: -1px;
+    top: 0;
+}
+.skew-cont > div {
+    position: relative;
+    margin-left: 180px;
+    padding: 30px;
+    height: 240px;
+    .opacity(0);
+    .transition(opacity, 1s, ease-in);
+}
+.skew-open {
+    width:@slide-width;
+    .transition(width, 1s, ease-in);
+}
+.skew-open > div {
+    opacity: 1;
+}
+.skew-accordion {
+    margin-left: 50px;
+    width:100%;
+    overflow: visible;
+    white-space:nowrap;
+}
+.skew-background {
+    position: absolute;
+    top: 0;
+    left: -150px;
+}
+.extra-content {
+    position: absolute;
+    display: block;
+    top: 0;
+    width: @slide-width;
+}

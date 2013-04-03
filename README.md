@@ -52,6 +52,3 @@ This accordions needs some basic markup:
 	</div>
 ```
 Include the scripts.js and styles.css files, tweak to your liking and you should be ready to go.
-
-## About
-This was developed as a proof of concept for a project, feel free to use it however you want.

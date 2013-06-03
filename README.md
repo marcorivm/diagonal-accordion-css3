@@ -2,6 +2,9 @@
 ## Description
 This is a proof of concept for a diagonal accordion using mostly CSS3 and some JavaScript for triggering events.
 
+## Demo
+You can check a demo [here](http://fiddlesalad.com/less/css-diagonal-accordion)
+
 ## Features
  - Diagonal accordion with a -45deg skew.
  - LESS source code for easier customization.
